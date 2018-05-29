@@ -1,0 +1,21 @@
+<h1>Cruelfolio</h1>
+
+<table>
+  <tr>
+    <th>Message</th>
+    <th></th>
+  </tr>
+
+  <% @cruels.each do |cruel| %>
+    <tr>
+      <td><%= cruel.message %></td>
+      <td><%= link_to 'Show', cruel_path(cruel) %></td>
+      <td><%= link_to 'Edit', edit_cruel_path(cruel) %></td>
+      <td><%= link_to 'Destroy', cruel_path(cruel),
+              method: :delete,
+              data: { confirm: 'Are You Sure?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Dashboard', root_path %> | <%= link_to 'Be Cruel Again', new_cruel_path %>
