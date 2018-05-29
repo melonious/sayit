@@ -3,6 +3,9 @@
 <p>
   <%= @kind.message %>
   <td><%= link_to 'Edit', edit_kind_path %></td>
+  <td><%= link_to 'Destroy', kind_path,
+          method: :delete,
+          data: { confirm: 'Are you sure?' }%></td>
 </p>
 
 <%= link_to 'Dashboard', root_path %> | <%= link_to 'Be Kind Again', new_kind_path %> | <%= link_to 'See Kinds', kinds_path %>

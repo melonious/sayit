@@ -11,6 +11,9 @@
       <td><%= kind.message %></td>
       <td><%= link_to 'Show', kind_path(kind) %></td>
       <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
+      <td><%= link_to 'Destroy', kind_path(kind),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }%></td>
     </tr>
   <% end %>
 </table>

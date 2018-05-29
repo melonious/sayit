@@ -35,6 +35,13 @@ class KindsController < ApplicationController
     end
   end
 
+  def destroy
+    @kind = Kind.find(params[:id])
+    @kind.destroy
+
+    redirect_to kinds_path
+  end
+
   private
 
   def kind_params
