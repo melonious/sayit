@@ -1,0 +1,25 @@
+<%= form_with model: @kind, local: true do |form| %>
+  <% if @kind.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@kind.errors.count, "error") %> prohibited this Kind from being saved:
+      </h2>
+      <ul>
+        <% @kind.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

@@ -1,0 +1,18 @@
+<h1>It Takes All Kinds</h1>
+
+<table>
+  <tr>
+    <th>Message</th>
+    <th></th>
+  </tr>
+
+  <% @kinds.each do |kind| %>
+    <tr>
+      <td><%= kind.message %></td>
+      <td><%= link_to 'Show', kind_path(kind) %></td>
+      <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Dashboard', root_path %> | <%= link_to 'Be Kind Again', new_kind_path %>

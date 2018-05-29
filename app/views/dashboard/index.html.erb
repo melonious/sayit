@@ -2,6 +2,8 @@
 <p>This is the dashboard.</p>
 
 <% if user_signed_in? %>
+  <%= link_to 'Be Kind', new_kind_path %> | <%= link_to 'See Kinds', kinds_path %>
+  <br>
   <%= link_to 'Edit Profile', edit_user_registration_path %> | <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'Login', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
