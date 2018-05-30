@@ -1,21 +1,25 @@
-<h1>Cruelfolio</h1>
+<div class="text-center container-fluid">
+  <h1 style="margin-top: 2rem; margin-bottom: 1.5rem">Cruelfolio</h1>
 
-<table>
-  <tr>
-    <th>Message</th>
-    <th></th>
-  </tr>
+  <div class="row">
+    <div class="col-sm-4">
+      <% @cruels.each do |cruel| %>
+        <div class="card" style="margin-bottom: .25rem">
+          <div class="card-body">
+            <p class="card-text"><%= cruel.message %></p>
+            <div class="row" style="display: inline-flex;">
+              <p><%= link_to 'Show', cruel_path(cruel), class: "btn btn-primary" %></p>
+              <p><%= link_to 'Edit', edit_cruel_path(cruel), class: "btn btn-primary", style: "margin-left: .5rem; margin-right: .5rem;" %></p>
+              <p ><%= link_to 'Destroy', cruel_path(cruel),
+                              method: :delete,
+                              data: { confirm: 'Are You Sure?'}, class: "btn btn-primary" %></p>
+            </div>
 
-  <% @cruels.each do |cruel| %>
-    <tr>
-      <td><%= cruel.message %></td>
-      <td><%= link_to 'Show', cruel_path(cruel) %></td>
-      <td><%= link_to 'Edit', edit_cruel_path(cruel) %></td>
-      <td><%= link_to 'Destroy', cruel_path(cruel),
-              method: :delete,
-              data: { confirm: 'Are You Sure?'} %></td>
-    </tr>
-  <% end %>
-</table>
+          </div>
 
-<%= link_to 'Dashboard', root_path %> | <%= link_to 'Be Cruel Again', new_cruel_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'Be Cruel Again', new_cruel_path, class: "btn btn-danger btn-lg", style: "margin-top: 2rem;" %>
+</div>
